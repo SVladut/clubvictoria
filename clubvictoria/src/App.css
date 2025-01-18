@@ -11,20 +11,17 @@ body {
   min-height: 100vh;
   overflow-y: auto; 
 }
+
 .container {
-  width: 100%;
-  max-width: 800px;
+  width: 90%;
+  max-width: 800px; 
   background: #fff;
-  padding: 40px;
+  padding: 20px;
+  margin: 50px auto;
+  animation: fadeIn 1s ease-in-out forwards; 
+
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  animation: fadeIn 1s ease-in-out forwards; 
-  border: 5px solid #ffffff;
-  background-position: center 10%;
-  background-repeat: no-repeat;
-  opacity: 0.7;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 @keyframes fadeIn {
@@ -88,7 +85,8 @@ textarea:focus {
 }
 
 .signature-box {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 300px;
   border: 2px dashed #5c95ff;
   border-radius: 8px;
@@ -96,8 +94,9 @@ textarea:focus {
   cursor: crosshair;
   margin-top: 10px;
   align-self: center;
-  transition: background-color 0.2s ease;
+  touch-action: none; 
 }
+
 
 .signature-box:hover {
   background-color: #e8f1fe; 

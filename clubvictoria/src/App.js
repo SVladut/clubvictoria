@@ -5,7 +5,6 @@ const App = () => {
   const canvasRef = useRef(null);
   const [drawing, setDrawing] = useState(false);
 
-  // Funcție pentru a obține coordonatele cursorului
   const getCoordinates = (event) => {
     const rect = canvasRef.current.getBoundingClientRect();
     let x, y;
@@ -20,6 +19,7 @@ const App = () => {
   };
 
   const startDrawing = (event) => {
+    event.preventDefault();
     setDrawing(true);
     const ctx = canvasRef.current.getContext("2d");
     ctx.beginPath();
@@ -29,13 +29,15 @@ const App = () => {
 
   const draw = (event) => {
     if (!drawing) return;
+    event.preventDefault();
     const ctx = canvasRef.current.getContext("2d");
     const { x, y } = getCoordinates(event);
     ctx.lineTo(x, y);
     ctx.stroke();
   };
 
-  const stopDrawing = () => {
+  const stopDrawing = (event) => {
+    event.preventDefault();
     setDrawing(false);
   };
 
@@ -73,18 +75,9 @@ const App = () => {
           onMouseMove={draw}
           onMouseUp={stopDrawing}
           onMouseLeave={stopDrawing}
-          onTouchStart={(e) => {
-            e.preventDefault();
-            startDrawing(e);
-          }}
-          onTouchMove={(e) => {
-            e.preventDefault();
-            draw(e);
-          }}
-          onTouchEnd={(e) => {
-            e.preventDefault();
-            stopDrawing();
-          }}
+          onTouchStart={startDrawing}
+          onTouchMove={draw}
+          onTouchEnd={stopDrawing}
         ></canvas>
 
         <div className="gdpr-section">
