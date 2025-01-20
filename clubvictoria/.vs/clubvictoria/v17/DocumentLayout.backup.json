@@ -46,7 +46,8 @@
               "RelativeToolTip": "src\\SuccessPage.css",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-19T21:45:14.438Z"
+              "WhenOpened": "2025-01-19T21:45:14.438Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -58,7 +59,8 @@
               "RelativeToolTip": "src\\SuccessPage.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-19T21:44:41.578Z"
+              "WhenOpened": "2025-01-19T21:44:41.578Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -70,7 +72,8 @@
               "RelativeToolTip": "src\\index.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-19T14:46:30.817Z"
+              "WhenOpened": "2025-01-19T14:46:30.817Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -80,7 +83,7 @@
               "RelativeDocumentMoniker": "src\\App.js",
               "ToolTip": "C:\\Users\\vladu\\Documents\\GitHub\\clubvictoria\\clubvictoria\\src\\App.js",
               "RelativeToolTip": "src\\App.js",
-              "ViewState": "AgIAALQAAAAAAAAAAAApwMYAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAqwLgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-01-19T14:46:07.819Z",
               "EditorCaption": ""
