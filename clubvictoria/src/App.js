@@ -196,7 +196,7 @@ const App = () => {
 const AppWithRouter = () => (
     <Router>
         <Routes>
-            <Route path="/" element={<App />} />
+            <Route path="/virometvictoria" element={<App />} />
             <Route path="/success" element={<SuccessPage />} />
         </Routes>
     </Router>
