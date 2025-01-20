@@ -194,12 +194,13 @@ const App = () => {
 };
 
 const AppWithRouter = () => (
-    <Router>
+    <Router basename="/clubvictoria">
         <Routes>
-            <Route path="/virometvictoria" element={<App />} />
+            <Route path="/" element={<App />} />
             <Route path="/success" element={<SuccessPage />} />
         </Routes>
     </Router>
 );
+
 
 export default AppWithRouter;
