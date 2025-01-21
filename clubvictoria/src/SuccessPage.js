@@ -20,7 +20,7 @@ const SuccessPage = () => {
                     </svg>
                 </div>
                 <p className="thank-you-note">Îți mulțumim pentru încredere!</p>
-                <a href="/" className="back-home-btn">Înapoi la Acasă</a>
+                <a href="/clubvictoria" className="back-home-btn">Înapoi la Acasă</a>
             </div>
         </div>
     );
