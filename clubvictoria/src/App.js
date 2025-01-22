@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"; 
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import SuccessPage from './SuccessPage';
 import './App.css'
+
 const App = () => {
     const canvasRef = useRef(null);
     const [drawing, setDrawing] = useState(false);
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const getCoordinates = (event) => {
         const rect = canvasRef.current.getBoundingClientRect();
@@ -75,6 +76,7 @@ const App = () => {
             judet: e.target.judet.value,
             initialatata: e.target.initialatata.value,
             semnatura: getSignatureBase64(),
+            perioada: e.target.perioada.value,  // Adăugăm perioada
         };
 
         const data = [persoana];
@@ -111,6 +113,13 @@ const App = () => {
                 Completează formularul pentru redistribuirea a 3,5% din impozitul tău pe venit către clubul nostru.
             </p>
             <form onSubmit={handleSubmit}>
+                {/* Adăugăm caseta pentru selectarea perioadei */}
+                <label htmlFor="perioada">Perioada de susținere</label>
+                <select id="perioada" name="perioada" required>
+                    <option value="1">1 an</option>
+                    <option value="2">2 ani</option>
+                </select>
+
                 <label htmlFor="nume">Nume</label>
                 <input type="text" id="nume" name="nume" placeholder="Introduceți numele" required />
 
@@ -183,7 +192,6 @@ const App = () => {
                     </label>
                 </div>
 
-
                 <button type="button" onClick={clearSignature}>
                     Șterge Semnătura
                 </button>
@@ -201,6 +209,5 @@ const AppWithRouter = () => (
         </Routes>
     </Router>
 );
-
 
 export default AppWithRouter;

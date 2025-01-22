@@ -12,6 +12,27 @@ body {
   overflow-y: auto; 
 }
 
+select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 65%;
+    text-align: center; 
+    display: inline-block; 
+}
+
+    select option {
+        text-align: center; 
+    }
+
+    select:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+
 .container {
   width: 90%;
   max-width: 800px; 
