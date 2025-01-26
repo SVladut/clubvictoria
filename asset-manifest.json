@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/clubvictoria/static/css/main.57e1cefb.css",
-    "main.js": "/clubvictoria/static/js/main.41cf690b.js",
+    "main.js": "/clubvictoria/static/js/main.59c8e116.js",
     "static/js/488.45417ab8.chunk.js": "/clubvictoria/static/js/488.45417ab8.chunk.js",
     "static/media/poza.jpg": "/clubvictoria/static/media/poza.b8de77fe6065abe14a24.jpg",
     "static/media/image_part_001.png": "/clubvictoria/static/media/image_part_001.e5446bb6176d957f7a2b.png",
     "index.html": "/clubvictoria/index.html",
     "main.57e1cefb.css.map": "/clubvictoria/static/css/main.57e1cefb.css.map",
-    "main.41cf690b.js.map": "/clubvictoria/static/js/main.41cf690b.js.map",
+    "main.59c8e116.js.map": "/clubvictoria/static/js/main.59c8e116.js.map",
     "488.45417ab8.chunk.js.map": "/clubvictoria/static/js/488.45417ab8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.57e1cefb.css",
-    "static/js/main.41cf690b.js"
+    "static/js/main.59c8e116.js"
   ]
 }
