@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/clubvictoria/static/css/main.57a7c515.css",
+    "main.css": "/clubvictoria/static/css/main.10e3317c.css",
     "main.js": "/clubvictoria/static/js/main.e1b6f275.js",
     "static/js/488.45417ab8.chunk.js": "/clubvictoria/static/js/488.45417ab8.chunk.js",
     "static/media/poza.jpg": "/clubvictoria/static/media/poza.b8de77fe6065abe14a24.jpg",
@@ -14,12 +14,12 @@
     "static/media/image_part_009.png": "/clubvictoria/static/media/image_part_009.94c1c65d7beb903f828d.png",
     "static/media/image_part_001.png": "/clubvictoria/static/media/image_part_001.e5446bb6176d957f7a2b.png",
     "index.html": "/clubvictoria/index.html",
-    "main.57a7c515.css.map": "/clubvictoria/static/css/main.57a7c515.css.map",
+    "main.10e3317c.css.map": "/clubvictoria/static/css/main.10e3317c.css.map",
     "main.e1b6f275.js.map": "/clubvictoria/static/js/main.e1b6f275.js.map",
     "488.45417ab8.chunk.js.map": "/clubvictoria/static/js/488.45417ab8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57a7c515.css",
+    "static/css/main.10e3317c.css",
     "static/js/main.e1b6f275.js"
   ]
 }
