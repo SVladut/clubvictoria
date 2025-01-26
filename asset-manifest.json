@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/clubvictoria/static/css/main.e18309a6.css",
-    "main.js": "/clubvictoria/static/js/main.b29c31c1.js",
+    "main.css": "/clubvictoria/static/css/main.17a54cdf.css",
+    "main.js": "/clubvictoria/static/js/main.9625f72e.js",
     "static/js/488.45417ab8.chunk.js": "/clubvictoria/static/js/488.45417ab8.chunk.js",
     "static/media/poza.jpg": "/clubvictoria/static/media/poza.b8de77fe6065abe14a24.jpg",
+    "static/media/image_part_002.png": "/clubvictoria/static/media/image_part_002.e4648eab666e8f4d09ad.png",
+    "static/media/image_part_003.png": "/clubvictoria/static/media/image_part_003.54e72dba428f87652177.png",
+    "static/media/image_part_006.png": "/clubvictoria/static/media/image_part_006.e2e825860d76875946e4.png",
+    "static/media/image_part_007.png": "/clubvictoria/static/media/image_part_007.6202deaeead84d16017b.png",
+    "static/media/image_part_004.png": "/clubvictoria/static/media/image_part_004.7951a3486fb83ec1cab5.png",
+    "static/media/image_part_005.png": "/clubvictoria/static/media/image_part_005.7c83810a11971f4fbef1.png",
+    "static/media/image_part_008.png": "/clubvictoria/static/media/image_part_008.7fcfe2b69f120fe2c137.png",
+    "static/media/image_part_009.png": "/clubvictoria/static/media/image_part_009.94c1c65d7beb903f828d.png",
     "static/media/image_part_001.png": "/clubvictoria/static/media/image_part_001.e5446bb6176d957f7a2b.png",
     "index.html": "/clubvictoria/index.html",
-    "main.e18309a6.css.map": "/clubvictoria/static/css/main.e18309a6.css.map",
-    "main.b29c31c1.js.map": "/clubvictoria/static/js/main.b29c31c1.js.map",
+    "main.17a54cdf.css.map": "/clubvictoria/static/css/main.17a54cdf.css.map",
+    "main.9625f72e.js.map": "/clubvictoria/static/js/main.9625f72e.js.map",
     "488.45417ab8.chunk.js.map": "/clubvictoria/static/js/488.45417ab8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e18309a6.css",
-    "static/js/main.b29c31c1.js"
+    "static/css/main.17a54cdf.css",
+    "static/js/main.9625f72e.js"
   ]
 }
