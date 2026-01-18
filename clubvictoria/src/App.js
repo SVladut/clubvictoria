@@ -1,59 +1,30 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import SuccessPage from './SuccessPage';
-import './App.css'
+import SignatureCanvas from 'react-signature-canvas';
+import poza from './poza.jpg';
+import Carusel from './Carusel';
+import './App.css';
 
 const App = () => {
-    const canvasRef = useRef(null);
-    const [drawing, setDrawing] = useState(false);
+
+    useEffect(() => {
+        document.title = "Formular Viromet Victoria";
+    }, []);
+
+    const sigCanvasRef = useRef(null);
     const navigate = useNavigate();
 
-    const getCoordinates = (event) => {
-        const rect = canvasRef.current.getBoundingClientRect();
-        let x, y;
-        if (event.type.startsWith("touch")) {
-            x = event.touches[0].clientX - rect.left;
-            y = event.touches[0].clientY - rect.top;
-        } else {
-            x = event.clientX - rect.left;
-            y = event.clientY - rect.top;
-        }
-        return { x, y };
-    };
-
-    const startDrawing = (event) => {
-        event.preventDefault();
-        setDrawing(true);
-        const ctx = canvasRef.current.getContext("2d");
-        ctx.beginPath();
-        const { x, y } = getCoordinates(event);
-        ctx.moveTo(x, y);
-    };
-
-    const draw = (event) => {
-        if (!drawing) return;
-        event.preventDefault();
-        const ctx = canvasRef.current.getContext("2d");
-        const { x, y } = getCoordinates(event);
-        ctx.lineTo(x, y);
-        ctx.stroke();
-    };
-
-    const stopDrawing = (event) => {
-        event.preventDefault();
-        setDrawing(false);
-    };
-
     const clearSignature = () => {
-        const ctx = canvasRef.current.getContext("2d");
-        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        sigCanvasRef.current.clear();
     };
 
     const getSignatureBase64 = () => {
-        const canvas = canvasRef.current;
-        const dataUrl = canvas.toDataURL("image/png");
-        const base64String = dataUrl.split(",")[1];
-        return base64String;
+        return sigCanvasRef.current.getTrimmedCanvas().toDataURL("image/png").split(",")[1];
+    };
+
+    const handleRedirect = () => {
+        navigate('/dontest');
     };
 
     const handleSubmit = async (e) => {
@@ -76,7 +47,7 @@ const App = () => {
             judet: e.target.judet.value,
             initialatata: e.target.initialatata.value,
             semnatura: getSignatureBase64(),
-            perioada: e.target.perioada.value,  // Adăugăm perioada
+            ani: e.target.ani.value,
         };
 
         const data = [persoana];
@@ -94,7 +65,6 @@ const App = () => {
                 const result = await response.json();
                 console.log("Data sent successfully:", result);
 
-                // Redirecționează către pagina de mulțumire
                 navigate('/success');
             } else {
                 console.error("Error response:", response.status, response.statusText);
@@ -106,16 +76,29 @@ const App = () => {
         }
     };
 
+
+    const handlesubmit2 = async (e) => {
+        navigate('/dontest');
+    }
+
     return (
         <div className="container">
             <h1>C.S. KARATE VIROMET Victoria</h1>
-            <p>
-                Completează formularul pentru redistribuirea a 3,5% din impozitul tău pe venit către clubul nostru.
+            <p className="intro-text">
+                <strong>Solicitare pentru redirecționarea a 3,5% din impozitul pe venit</strong>
+                <br /><br />
+                Stimată doamnă/Stimate domn,<br /><br />
+                Clubul Sportiv <strong>C.S. KARATE VIROMET Victoria</strong> vă invită să sprijiniți activitatea noastră prin redirecționarea a 3,5% din impozitul pe venit către clubul nostru. Această contribuție nu implică niciun cost suplimentar pentru dumneavoastră, dar are un impact semnificativ asupra susținerii tinerilor sportivi și dezvoltării activităților noastre.<br /><br />
+                Completați formularul atașat și contribuiți alături de noi la promovarea sportului și a valorilor pe care le inspirăm generațiilor viitoare.<br /><br />
+                Vă mulțumim pentru sprijinul acordat!<br /><br />
+                Cu stimă, Conducerea C.S. KARATE VIROMET Victoria
             </p>
+            <div className="image-container">
+                <img src={poza} alt="Logo C.S. KARATE VIROMET Victoria" className="logo-image" />
+            </div>
             <form onSubmit={handleSubmit}>
-                {/* Adăugăm caseta pentru selectarea perioadei */}
-                <label htmlFor="perioada">Perioada de susținere</label>
-                <select id="perioada" name="perioada" required>
+                <label htmlFor="ani">Perioada de susținere</label>
+                <select id="ani" name="ani" required>
                     <option value="1">1 an</option>
                     <option value="2">2 ani</option>
                 </select>
@@ -154,30 +137,23 @@ const App = () => {
                 <input type="text" id="numar" name="numar" placeholder="Introduceți numărul" required />
 
                 <label htmlFor="bloc">Bloc</label>
-                <input type="text" id="bloc" name="bloc" placeholder="Introduceți blocul" required />
+                <input type="text" id="bloc" name="bloc" placeholder="Introduceți blocul" />
 
                 <label htmlFor="scara">Scară</label>
-                <input type="text" id="scara" name="scara" placeholder="Introduceți scara" required />
+                <input type="text" id="scara" name="scara" placeholder="Introduceți scara" />
 
                 <label htmlFor="etaj">Etaj</label>
-                <input type="text" id="etaj" name="etaj" placeholder="Introduceți etajul" required />
+                <input type="text" id="etaj" name="etaj" placeholder="Introduceți etajul" />
 
                 <label htmlFor="ap">Apartament</label>
-                <input type="text" id="ap" name="ap" placeholder="Introduceți apartamentul" required />
+                <input type="text" id="ap" name="ap" placeholder="Introduceți apartamentul" />
 
                 <label htmlFor="semnatura">Semnătura</label>
-                <canvas
-                    ref={canvasRef}
-                    id="semnatura"
-                    className="signature-box"
-                    onMouseDown={startDrawing}
-                    onMouseMove={draw}
-                    onMouseUp={stopDrawing}
-                    onMouseLeave={stopDrawing}
-                    onTouchStart={startDrawing}
-                    onTouchMove={draw}
-                    onTouchEnd={stopDrawing}
-                ></canvas>
+                <SignatureCanvas
+                    ref={sigCanvasRef}
+                    penColor="black"
+                    canvasProps={{ className: "signature-box" }}
+                />
 
                 <div className="gdpr-section">
                     <label>
@@ -196,6 +172,7 @@ const App = () => {
                     Șterge Semnătura
                 </button>
                 <button type="submit">Trimite</button>
+                {/*<button type="button" onClick={handlesubmit2}></button> */}
             </form>
         </div>
     );
@@ -206,6 +183,8 @@ const AppWithRouter = () => (
         <Routes>
             <Route path="/" element={<App />} />
             <Route path="/success" element={<SuccessPage />} />
+            <Route path="/dontest" element={<Carusel />} />
+
         </Routes>
     </Router>
 );
